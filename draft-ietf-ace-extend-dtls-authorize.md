@@ -1,7 +1,8 @@
 ---
 title: Extension of the ACE CoAP-DTLS Profile to TLS 
-docname: draft-bergmann-ace-extend-dtls-authorize
+docname: draft-ietf-ace-extend-dtls-authorize
 abbrev: CoAP-DTLS Extension
+docname: draft-ietf-ace-extend-dtls-authorize-latest
 updates: draft-ietf-ace-dtls-authorize
 ipr: trust200902
 cat: std
