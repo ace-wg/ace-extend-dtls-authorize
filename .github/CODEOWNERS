@@ -1,0 +1,3 @@
+# Automatically generated CODEOWNERS
+# Regenerate with `make update-codeowners`
+draft-ietf-ace-extend-dtls-authorize.md bergmann@tzi.org john.mattsson@ericsson.com goran.selander@ericsson.com
