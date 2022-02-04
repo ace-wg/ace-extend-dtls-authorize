@@ -1,5 +1,5 @@
 ---
-title: Extension of the ACE CoAP-DTLS Profile to TLS 
+title: Extension of the ACE CoAP-DTLS Profile to TLS
 docname: draft-ietf-ace-extend-dtls-authorize
 abbrev: CoAP-DTLS Extension
 docname: draft-ietf-ace-extend-dtls-authorize-latest
@@ -19,7 +19,7 @@ author:
   surname: Bergmann
   org: Universität Bremen TZI
   abbrev: TZI
-  street: Bremen, D-28359 
+  street: Bremen, D-28359
   country: Germany
   email: bergmann@tzi.org
 - name: John Preuß Mattsson
