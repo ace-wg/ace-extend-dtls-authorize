@@ -6,6 +6,7 @@ docname: draft-ietf-ace-extend-dtls-authorize-latest
 updates: draft-ietf-ace-dtls-authorize
 ipr: trust200902
 cat: std
+workgroup: ACE Working Group
 
 coding: utf-8
 pi: # can use array (if all yes) or hash here
