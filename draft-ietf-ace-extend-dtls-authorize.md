@@ -55,6 +55,9 @@ informative:
   RFC8996:
   I-D.ietf-ace-oscore-profile:
 
+entity:
+        SELF: "[RFC-XXXX]"
+
 --- abstract
 
 This document updates the CoAP-DTLS profile for ACE {{I-D.ietf-ace-dtls-authorize}} by specifying that the profile applies to TLS as well as DTLS.
@@ -74,7 +77,20 @@ security.
 
 # IANA Considerations
 
-No IANA Considerations.
+The following updates are done to the ACE OAuth Profile Registry for
+the profile with Profile ID 1 and Profile name coap_dtls:
+
+Note to RFC Editor: Please replace all occurrences of "{{&SELF}}" with
+the RFC number of this specification and delete this paragraph.
+
+Profile Description: Profile for delegating client authentication and
+authorization in a constrained environment by establishing a Datagram
+Transport Layer Security (DTLS) or Transport Layer Security (TLS)
+channel between resource-constrained nodes.
+
+Change Controller:  IESG
+
+Reference:  {{&SELF}}
 
 # Security Considerations
 
