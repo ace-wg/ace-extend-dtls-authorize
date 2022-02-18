@@ -1,5 +1,5 @@
 ---
-title: Extension of the ACE CoAP-DTLS Profile to TLS
+title: Extension of the CoAP-DTLS Profile for ACE to TLS
 docname: draft-ietf-ace-extend-dtls-authorize
 abbrev: CoAP-DTLS Extension
 docname: draft-ietf-ace-extend-dtls-authorize-latest
@@ -56,7 +56,7 @@ informative:
 
 --- abstract
 
-This document updates the ACE CoAP-DTLS profile by specifying that the profile applies to TLS as well as DTLS.
+This document updates the CoAP-DTLS profile for ACE {{I-D.ietf-ace-dtls-authorize}} by specifying that the profile applies to TLS as well as DTLS.
 
 --- middle
 
