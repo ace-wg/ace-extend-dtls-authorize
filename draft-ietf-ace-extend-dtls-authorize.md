@@ -101,5 +101,7 @@ The security consideration and requirements in TLS 1.3 {{RFC8446}} and BCP 195 {
 # Acknowledgments
 {: numbered="no"}
 
+The authors would like to thank Marco Tiloca for reviewing this
+specification.
 
 --- fluff
