@@ -46,7 +46,6 @@ normative:
   RFC7252:
   RFC8323:
   RFC8446:
-  I-D.ietf-tls-dtls13:
   I-D.ietf-ace-dtls-authorize:
 
 informative:
