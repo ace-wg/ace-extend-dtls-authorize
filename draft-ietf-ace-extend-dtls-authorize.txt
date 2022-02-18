@@ -2,21 +2,22 @@
 
 
 
-Network Working Group                                        O. Bergmann
+ACE Working Group                                            O. Bergmann
 Internet-Draft                                                       TZI
 Updates: draft-ietf-ace-dtls-authorize (if             J. Preuß Mattsson
          approved)                                           G. Selander
 Intended status: Standards Track                                Ericsson
-Expires: 8 August 2022                                   4 February 2022
+Expires: 22 August 2022                                 18 February 2022
 
 
-             Extension of the ACE CoAP-DTLS Profile to TLS
+           Extension of the CoAP-DTLS Profile for ACE to TLS
               draft-ietf-ace-extend-dtls-authorize-latest
 
 Abstract
 
-   This document updates the ACE CoAP-DTLS profile by specifying that
-   the profile applies to TLS as well as DTLS.
+   This document updates the CoAP-DTLS profile for ACE
+   [I-D.ietf-ace-dtls-authorize] by specifying that the profile applies
+   to TLS as well as DTLS.
 
 Discussion Venues
 
@@ -45,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 August 2022.
+   This Internet-Draft will expire on 22 August 2022.
 
 Copyright Notice
 
@@ -74,24 +75,41 @@ Table of Contents
 
 1.  Introduction
 
-   [I-D.ietf-ace-dtls-authorize] only specifies use of DTLS
-   [I-D.ietf-tls-dtls13] but works equally well for TLS.  For many
+   [I-D.ietf-ace-dtls-authorize] only specifies the use of DTLS
+   [RFC6347] but works equally well for TLS [RFC8446].  For many
    constrained implementations, CoAP over UDP [RFC7252] is the first
    choice, but when deploying ACE in networks controlled by other
    entities (such as the Internet), UDP might be blocked on the path
    between the client and the RS, and the client might have to fall back
    to CoAP over TCP [RFC8323] for NAT or firewall traversal.  This
    feature is supported by the OSCORE profile
-   [I-D.ietf-ace-oscore-profile] but is lacking from the DTLS profile.
+   [I-D.ietf-ace-oscore-profile] but is lacking in the DTLS profile.
 
    This document updates [I-D.ietf-ace-dtls-authorize] by specifying
    that the profile applies to TLS as well as DTLS.  The same access
-   rights are valid in case transport layer security is either DTLS or
-   TLS, and the same access token can be used.
+   rights are valid in case transport layer security is provided by
+   either DTLS or TLS, and the same access token can be used.
+   Therefore, the value "coap_dtls" in the "ace_profile" parameter of an
+   AS-to-Client response or in the "ace_profile" claim of an access
+   token indicates that either DTLS or TLS can be used for transport
+   layer security.
 
 2.  IANA Considerations
 
-   No IANA Considerations.
+   The following updates are done to the ACE OAuth Profile Registry for
+   the profile with Profile ID 1 and Profile name coap_dtls:
+
+   Note to RFC Editor: Please replace all occurrences of "[RFC-XXXX]"
+   with the RFC number of this specification and delete this paragraph.
+
+   Profile Description: Profile for delegating client authentication and
+   authorization in a constrained environment by establishing a Datagram
+   Transport Layer Security (DTLS) or Transport Layer Security (TLS)
+   channel between resource-constrained nodes.
+
+   Change Controller: IESG
+
+   Reference: [RFC-XXXX]
 
 3.  Security Considerations
 
@@ -117,6 +135,10 @@ Table of Contents
               1.3", Work in Progress, Internet-Draft, draft-ietf-tls-
               dtls13-43, 30 April 2021, <https://www.ietf.org/internet-
               drafts/draft-ietf-tls-dtls13-43.txt>.
+
+   [RFC6347]  Rescorla, E. and N. Modadugu, "Datagram Transport Layer
+              Security Version 1.2", RFC 6347, DOI 10.17487/RFC6347,
+              January 2012, <https://www.rfc-editor.org/info/rfc6347>.
 
    [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
               Application Protocol (CoAP)", RFC 7252,
@@ -154,6 +176,9 @@ Table of Contents
               <https://www.rfc-editor.org/info/rfc8996>.
 
 Acknowledgments
+
+   The authors would like to thank Marco Tiloca for reviewing this
+   specification.
 
 Authors' Addresses
 
