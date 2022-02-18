@@ -66,9 +66,9 @@ This document updates the CoAP-DTLS profile for ACE {{I-D.ietf-ace-dtls-authoriz
 
 # Introduction
 
-{{I-D.ietf-ace-dtls-authorize}} only specifies use of DTLS {{RFC6347}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This feature is supported by the OSCORE profile {{I-D.ietf-ace-oscore-profile}} but is lacking from the DTLS profile.
+{{I-D.ietf-ace-dtls-authorize}} only specifies the use of DTLS {{RFC6347}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This feature is supported by the OSCORE profile {{I-D.ietf-ace-oscore-profile}} but is lacking in the DTLS profile.
 
-This document updates {{I-D.ietf-ace-dtls-authorize}} by specifying that the profile applies to TLS as well as DTLS. The same access rights are valid in case transport layer security is either DTLS or TLS, and the same access token can be used.
+This document updates {{I-D.ietf-ace-dtls-authorize}} by specifying that the profile applies to TLS as well as DTLS. The same access rights are valid in case transport layer security is provided by either DTLS or TLS, and the same access token can be used.
 Therefore, the value `coap_dtls` in the `ace_profile` parameter of an
 AS-to-Client response or in the `ace_profile` claim of an access token
 indicates that either DTLS or TLS can be used for transport layer
