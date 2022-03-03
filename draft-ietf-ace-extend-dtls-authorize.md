@@ -46,6 +46,7 @@ normative:
   RFC7252:
   RFC8323:
   RFC8446:
+  I-D.ietf-ace-oauth-authz:
   I-D.ietf-ace-dtls-authorize:
 
 informative:
@@ -73,6 +74,13 @@ AS-to-Client response or in the `ace_profile` claim of an access token
 indicates that either DTLS or TLS can be used for transport layer
 security.
 
+# Terminology
+
+{::boilerplate bcp14-tagged}
+
+Readers are expected to be familiar with the terms and concepts
+described in {{I-D.ietf-ace-oauth-authz}} and
+{{I-D.ietf-ace-dtls-authorize}}.
 
 # IANA Considerations
 
