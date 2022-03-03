@@ -82,6 +82,33 @@ Readers are expected to be familiar with the terms and concepts
 described in {{I-D.ietf-ace-oauth-authz}} and
 {{I-D.ietf-ace-dtls-authorize}}.
 
+# Connection Establishment
+
+Following the procedures defined in {{I-D.ietf-ace-dtls-authorize}}, a
+Client can retrieve an Access Token from an Authorization Server (AS)
+in order to establish a security association with a specific Resource
+Server. The `ace_profile` parameter in the Client-to-AS request and
+AS-to-client response is used to determine the ACE profile that the
+Client uses towards the Resource Server (RS).
+
+In case the `ace_profile` parameter indicates the use of the DTLS
+profile for ACE as defined in {{I-D.ietf-ace-dtls-authorize}}, the
+Client MAY try to connect the Resource Server via TLS, or try TLS and
+DTLS in parallel to accelerate the session setup.
+
+As resource-constrained devices are not expected to support both
+transport layer security mechanisms, a Client that implements either
+TLS or DTLS but not both SHOULD be prepared that no communication
+channel with the Resource Server can be established. This error SHOULD
+be handled by the Client in the same way as unsupported ACE profiles.
+
+Note that a communication setup with an a priori unknown Resource
+Server typically employs an initial unauthorized resource request as
+illustrated in Section 2 of {{I-D.ietf-ace-dtls-authorize}}. If this
+message exchange succeeds, the Client SHOULD use the same underlying
+transport protocol for the establishment of the security association
+as well (i.e., DTLS for UDP, and TLS for TCP).
+
 # IANA Considerations
 
 The following updates are done to the ACE OAuth Profile Registry for
