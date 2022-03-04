@@ -46,6 +46,7 @@ normative:
   RFC7252:
   RFC8323:
   RFC8446:
+  I-D.ietf-ace-oauth-authz:
   I-D.ietf-ace-dtls-authorize:
 
 informative:
@@ -73,6 +74,48 @@ AS-to-Client response or in the `ace_profile` claim of an access token
 indicates that either DTLS or TLS can be used for transport layer
 security.
 
+# Terminology
+
+{::boilerplate bcp14-tagged}
+
+Readers are expected to be familiar with the terms and concepts
+described in {{I-D.ietf-ace-oauth-authz}} and
+{{I-D.ietf-ace-dtls-authorize}}.
+
+# Connection Establishment
+
+Following the procedures defined in {{I-D.ietf-ace-dtls-authorize}}, a
+Client can retrieve an Access Token from an Authorization Server (AS)
+in order to establish a security association with a specific Resource
+Server. The `ace_profile` parameter in the Client-to-AS request and
+AS-to-client response is used to determine the ACE profile that the
+Client uses towards the Resource Server (RS).
+
+In case the `ace_profile` parameter indicates the use of the DTLS
+profile for ACE as defined in {{I-D.ietf-ace-dtls-authorize}}, the
+Client MAY try to connect to the Resource Server via TLS, or try TLS and
+DTLS in parallel to accelerate the session setup.
+
+As resource-constrained devices are not expected to support both
+transport layer security mechanisms, a Client that implements either
+TLS or DTLS but not both might fail in establishing a secure
+communication channel with the Resource Server altogether.
+This error SHOULD
+be handled by the Client in the same way as unsupported ACE profiles.
+
+Note that a communication setup with an a priori unknown Resource
+Server typically employs an initial unauthorized resource request as
+illustrated in Section 2 of {{I-D.ietf-ace-dtls-authorize}}. If this
+message exchange succeeds, the Client SHOULD first use the same
+underlying transport protocol for the establishment of the security
+association as well (i.e., DTLS for UDP, and TLS for TCP).
+
+As a consequence, the selection of the transport protocol used for the
+initial unauthorized resource request also depends on the transport
+layer security mechanism supported by the Client.  Clients that
+support either DTLS or TLS but not both SHOULD use the transport
+protocol underlying the supported transport layer security mechanism
+also for an initial unauthorized resource request.
 
 # IANA Considerations
 
