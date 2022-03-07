@@ -7,7 +7,7 @@ Internet-Draft                                                       TZI
 Updates: draft-ietf-ace-dtls-authorize (if             J. Preuß Mattsson
          approved)                                           G. Selander
 Intended status: Standards Track                                Ericsson
-Expires: 5 September 2022                                   4 March 2022
+Expires: 8 September 2022                                   7 March 2022
 
 
            Extension of the CoAP-DTLS Profile for ACE to TLS
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 September 2022.
+   This Internet-Draft will expire on 8 September 2022.
 
 Copyright Notice
 
@@ -127,7 +127,10 @@ Table of Contents
    TLS or DTLS but not both might fail in establishing a secure
    communication channel with the Resource Server altogether.  This
    error SHOULD be handled by the Client in the same way as unsupported
-   ACE profiles.
+   ACE profiles.  If the Client is modified accordingly or it learns
+   that the Resource Server has been, the Client may try to connect to
+   the Resource Server using the transport layer security mechanism that
+   was previously not mutually supported.
 
    Note that a communication setup with an a priori unknown Resource
    Server typically employs an initial unauthorized resource request as
