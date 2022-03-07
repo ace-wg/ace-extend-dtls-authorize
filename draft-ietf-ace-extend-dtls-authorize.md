@@ -102,6 +102,10 @@ TLS or DTLS but not both might fail in establishing a secure
 communication channel with the Resource Server altogether.
 This error SHOULD
 be handled by the Client in the same way as unsupported ACE profiles.
+If the Client is modified
+accordingly or it learns that the Resource Server has been, the Client
+may try to connect to the Resource Server using the transport layer
+security mechanism that was previously not mutually supported.
 
 Note that a communication setup with an a priori unknown Resource
 Server typically employs an initial unauthorized resource request as
