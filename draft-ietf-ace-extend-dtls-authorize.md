@@ -7,6 +7,7 @@ updates: draft-ietf-ace-dtls-authorize
 ipr: trust200902
 cat: std
 workgroup: ACE Working Group
+stream: IETF
 
 coding: utf-8
 pi: # can use array (if all yes) or hash here
@@ -46,29 +47,29 @@ normative:
   RFC7252:
   RFC8323:
   RFC8446:
-  I-D.ietf-ace-oauth-authz:
-  I-D.ietf-ace-dtls-authorize:
+  RFC9200:
+  RFC9202:
 
 informative:
 
   RFC7525:
   RFC8996:
-  I-D.ietf-ace-oscore-profile:
+  RFC9203:
 
 entity:
         SELF: "[RFC-XXXX]"
 
 --- abstract
 
-This document updates the CoAP-DTLS profile for ACE {{I-D.ietf-ace-dtls-authorize}} by specifying that the profile applies to TLS as well as DTLS.
+This document updates the CoAP-DTLS profile for ACE {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS.
 
 --- middle
 
 # Introduction
 
-{{I-D.ietf-ace-dtls-authorize}} only specifies the use of DTLS {{RFC6347}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This feature is supported by the OSCORE profile {{I-D.ietf-ace-oscore-profile}} but is lacking in the DTLS profile.
+{{RFC9202}} only specifies the use of DTLS {{RFC6347}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This feature is supported by the OSCORE profile {{RFC9203}} but is lacking in the DTLS profile.
 
-This document updates {{I-D.ietf-ace-dtls-authorize}} by specifying that the profile applies to TLS as well as DTLS. The same access rights are valid in case transport layer security is provided by either DTLS or TLS, and the same access token can be used.
+This document updates {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS. The same access rights are valid in case transport layer security is provided by either DTLS or TLS, and the same access token can be used.
 Therefore, the value `coap_dtls` in the `ace_profile` parameter of an
 AS-to-Client response or in the `ace_profile` claim of an access token
 indicates that either DTLS or TLS can be used for transport layer
@@ -79,12 +80,12 @@ security.
 {::boilerplate bcp14-tagged}
 
 Readers are expected to be familiar with the terms and concepts
-described in {{I-D.ietf-ace-oauth-authz}} and
-{{I-D.ietf-ace-dtls-authorize}}.
+described in {{RFC9200}} and
+{{RFC9202}}.
 
 # Connection Establishment
 
-Following the procedures defined in {{I-D.ietf-ace-dtls-authorize}}, a
+Following the procedures defined in {{RFC9202}}, a
 Client can retrieve an Access Token from an Authorization Server (AS)
 in order to establish a security association with a specific Resource
 Server. The `ace_profile` parameter in the Client-to-AS request and
@@ -92,7 +93,7 @@ AS-to-client response is used to determine the ACE profile that the
 Client uses towards the Resource Server (RS).
 
 In case the `ace_profile` parameter indicates the use of the DTLS
-profile for ACE as defined in {{I-D.ietf-ace-dtls-authorize}}, the
+profile for ACE as defined in {{RFC9202}}, the
 Client MAY try to connect to the Resource Server via TLS, or try TLS and
 DTLS in parallel to accelerate the session setup.
 
@@ -109,7 +110,7 @@ security mechanism that was previously not mutually supported.
 
 Note that a communication setup with an a priori unknown Resource
 Server typically employs an initial unauthorized resource request as
-illustrated in Section 2 of {{I-D.ietf-ace-dtls-authorize}}. If this
+illustrated in Section 2 of {{RFC9202}}. If this
 message exchange succeeds, the Client SHOULD first use the same
 underlying transport protocol for the establishment of the security
 association as well (i.e., DTLS for UDP, and TLS for TCP).
