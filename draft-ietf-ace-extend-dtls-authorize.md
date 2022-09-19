@@ -62,7 +62,8 @@ entity:
 
 --- abstract
 
-This document updates the CoAP-DTLS profile for ACE {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS.
+This document updates the CoAP-DTLS profile for ACE by specifying that
+the profile applies to TLS as well as DTLS.
 
 --- middle
 
