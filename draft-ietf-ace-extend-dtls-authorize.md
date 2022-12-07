@@ -3,7 +3,7 @@ title: Extension of the CoAP-DTLS Profile for ACE to TLS
 docname: draft-ietf-ace-extend-dtls-authorize
 abbrev: CoAP-DTLS Extension
 docname: draft-ietf-ace-extend-dtls-authorize-latest
-updates: draft-ietf-ace-dtls-authorize
+updates: 9202
 ipr: trust200902
 cat: std
 workgroup: ACE Working Group
@@ -62,14 +62,14 @@ entity:
 
 --- abstract
 
-This document updates the CoAP-DTLS profile for ACE by specifying that
-the profile applies to TLS as well as DTLS.
+This document updates the CoAP-DTLS profile for ACE described in RFC 9202
+by specifying that the profile applies to TLS as well as DTLS.
 
 --- middle
 
 # Introduction
 
-{{RFC9202}} only specifies the use of DTLS {{RFC6347}} {{RFC9147}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This feature is supported by the OSCORE profile {{RFC9203}} but is lacking in the DTLS profile.
+{{RFC9202}} only specifies the use of DTLS {{RFC6347}} {{RFC9147}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This dual support for TLS and DTLS is already supported by the OSCORE profile {{RFC9203}}.
 
 This document updates {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS. The same access rights are valid in case transport layer security is provided by either DTLS or TLS, and the same access token can be used.
 Therefore, the value `coap_dtls` in the `ace_profile` parameter of an
@@ -126,8 +126,8 @@ also for an initial unauthorized resource request.
 
 # IANA Considerations
 
-The following updates have been done for the "ACE Profiles" registry
-for the profile with Profile ID 1 and Profile name coap_dtls:
+The following updates have been done to the "ACE Profiles" registry
+for the profile with a "CBOR Value" field value of 1 and "Name" of "coap_dtls":
 
 Note to RFC Editor: Please replace all occurrences of "{{&SELF}}" with
 the RFC number of this specification and delete this paragraph.
