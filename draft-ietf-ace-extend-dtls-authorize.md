@@ -89,9 +89,9 @@ described in {{RFC9200}} and
 Following the procedures defined in {{RFC9202}}, a
 Client can retrieve an Access Token from an Authorization Server (AS)
 in order to establish a security association with a specific Resource
-Server (RS). The `ace_profile` parameter in the Client-to-AS request and
+Server. The `ace_profile` parameter in the Client-to-AS request and
 AS-to-client response is used to determine the ACE profile that the
-Client uses towards the RS.
+Client uses towards the Resource Server (RS).
 
 In case the `ace_profile` parameter indicates the use of the DTLS
 profile for ACE as defined in {{RFC9202}}, the
