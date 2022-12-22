@@ -116,7 +116,7 @@ initial unauthorized resource request also depends on the transport
 layer security mechanism supported by the Client.  Clients that
 support either DTLS or TLS but not both SHOULD use the transport
 protocol underlying the supported transport layer security mechanism
-also for an initial unauthorized resource request.
+also for an initial unauthorized resource request to the RS as in Section 2 of {{RFC9202}}.
 
 # IANA Considerations
 
