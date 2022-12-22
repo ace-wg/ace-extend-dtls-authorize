@@ -139,7 +139,7 @@ channel between resource-constrained nodes.
 
 Change Controller:  IESG
 
-Reference:  {{&SELF}}
+Reference:  \[RFC9202\] {{&SELF}}
 
 # Security Considerations
 
