@@ -95,7 +95,9 @@ Client uses towards the Resource Server (RS).
 In case the `ace_profile` parameter indicates the use of the DTLS
 profile for ACE as defined in {{RFC9202}}, the
 Client MAY try to connect to the Resource Server via TLS, or try TLS and
-DTLS in parallel to accelerate the session setup.
+DTLS in parallel to accelerate the connection setup. It is up to the
+implementation to handle the case where the RS reponds to both connection
+requests.
 
 As resource-constrained devices are not expected to support both
 transport layer security mechanisms, a Client that implements either
