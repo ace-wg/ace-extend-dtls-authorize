@@ -143,7 +143,7 @@ Reference:  {{&SELF}}
 
 # Security Considerations
 
-The security consideration and requirements in TLS 1.3 {{RFC8446}} and BCP 195 {{RFC8996}} {{RFC9325}} also apply to this document.
+The security consideration and requirements in {{RFC9202}}, TLS 1.3 {{RFC8446}}, and BCP 195 {{RFC8996}} {{RFC9325}} also apply to this document.
 
 --- back
 
