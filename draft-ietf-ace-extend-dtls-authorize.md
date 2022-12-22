@@ -108,8 +108,8 @@ Note that a communication setup with an a priori unknown Resource
 Server typically employs an initial unauthorized resource request as
 illustrated in Section 2 of {{RFC9202}}. If this
 message exchange succeeds, the Client SHOULD first use the same
-underlying transport protocol for the establishment of the security
-association as well (i.e., DTLS for UDP, and TLS for TCP).
+underlying transport protocol also for the establishment of the security
+association to RS (i.e., DTLS for UDP, and TLS for TCP).
 
 As a consequence, the selection of the transport protocol used for the
 initial unauthorized resource request also depends on the transport
