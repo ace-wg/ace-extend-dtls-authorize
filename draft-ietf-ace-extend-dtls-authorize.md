@@ -47,15 +47,15 @@ normative:
   RFC7252:
   RFC8323:
   RFC8446:
+  RFC9147:
   RFC9200:
   RFC9202:
-  RFC9147:
 
 informative:
 
-  RFC7525:
   RFC8996:
   RFC9203:
+  RFC9325:
 
 entity:
         SELF: "[RFC-XXXX]"
@@ -143,7 +143,7 @@ Reference:  {{&SELF}}
 
 # Security Considerations
 
-The security consideration and requirements in TLS 1.3 {{RFC8446}} and BCP 195 {{RFC7525}} {{RFC8996}} also apply to this document.
+The security consideration and requirements in TLS 1.3 {{RFC8446}} and BCP 195 {{RFC8996}} {{RFC9325}} also apply to this document.
 
 --- back
 
