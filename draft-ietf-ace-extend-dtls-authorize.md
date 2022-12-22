@@ -43,7 +43,6 @@ author:
 
 normative:
 
-  RFC6347:
   RFC7252:
   RFC8323:
   RFC8446:
@@ -69,7 +68,7 @@ by specifying that the profile applies to TLS as well as DTLS.
 
 # Introduction
 
-{{RFC9202}} only specifies the use of DTLS {{RFC6347}} {{RFC9147}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This dual support for security over TCP as well as UDP is already supported by the OSCORE profile {{RFC9203}}.
+{{RFC9202}} only specifies the use of DTLS {{RFC9147}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This dual support for security over TCP as well as UDP is already supported by the OSCORE profile {{RFC9203}}.
 
 This document updates {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS. The same access rights are valid in case transport layer security is provided by either DTLS or TLS, and the same access token can be used.
 Therefore, the value `coap_dtls` in the `ace_profile` parameter of an
