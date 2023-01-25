@@ -70,10 +70,12 @@ by specifying that the profile applies to TLS as well as DTLS.
 
 {{RFC9202}} only specifies the use of DTLS {{RFC9147}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This dual support for security over TCP as well as UDP is already supported by the OSCORE profile {{RFC9203}}.
 
-This document updates {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS. The same access rights are valid in case transport layer security is provided by either DTLS or TLS. The same access token can be used by either DTLS or TLS between a given (Client, RS) pair. Therefore, the value `coap_dtls` in the `ace_profile` parameter of an
+This document updates {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS. It only impacts the transport layer security channel between Client and Resource Server.
+The same access rights are valid in case transport layer security is provided by either DTLS or TLS. The same access token can be used by either DTLS or TLS between a given (Client, RS) pair. Therefore, the value `coap_dtls` in the `ace_profile` parameter of an
 AS-to-Client response or in the `ace_profile` claim of an access token
 indicates that either DTLS or TLS can be used for transport layer
 security.
+
 
 # Terminology
 
@@ -82,6 +84,17 @@ security.
 Readers are expected to be familiar with the terms and concepts
 described in {{RFC9200}} and
 {{RFC9202}}.
+
+# Specific Changes to RFC 9202
+
+The main changes to {{RFC9202}} specified in this document are limited
+to replacing "DTLS" with "DTLS/TLS" throughout the document. This
+essentially impacts the use of secure transport as described in the
+sections 3.2.2, 3.3.2, 4, and 5.
+
+In addition to this, the Client and Resource Server behavior is
+updated to describe the case where either or both DTLS and TLS may be
+available, as described in the following section.
 
 # Connection Establishment
 
