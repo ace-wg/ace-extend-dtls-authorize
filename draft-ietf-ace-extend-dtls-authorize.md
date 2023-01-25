@@ -100,7 +100,8 @@ implementation to handle the case where the RS reponds to both connection
 requests.
 
 As resource-constrained devices are not expected to support both
-transport layer security mechanisms, a Client that implements either
+transport layer security mechanisms. Clients and Resource Servers
+SHOULD support DTLS and MAY support TLS. A Client that implements either
 TLS or DTLS but not both might fail in establishing a secure
 communication channel with the Resource Server altogether.
 
