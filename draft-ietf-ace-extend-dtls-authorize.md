@@ -108,7 +108,8 @@ As resource-constrained devices are not expected to support both
 transport layer security mechanisms, Clients and Resource Servers
 SHOULD support DTLS and MAY support TLS. A Client that implements either
 TLS or DTLS but not both might fail in establishing a secure
-communication channel with the Resource Server altogether.
+communication channel with the Resource Server altogether. Non-constrained
+Clients and Resource Servers SHOULD support both TLS and DTLS.
 
 Note that a communication setup with an a priori unknown Resource
 Server typically employs an initial unauthorized resource request as
