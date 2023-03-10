@@ -66,7 +66,7 @@ This document updates the Datagram Transport Layer Security (DTLS) Profile for A
 
 --- middle
 
-# Introduction 
+# Introduction
 
 The Authentication and Authorization for Constrained Environments (ACE) framework {{RFC9200}} defines an architecture for lightweight authorization between Client, Resource Server (RS), and Authorization Server (AS) where the Client and RS may be constrained {{RFC7228}}. The Datagram Transport Layer Security (DTLS) Profile for Authentication and Authorization for Constrained Environments (ACE) {{RFC9202}} only specifies the use of Datagram Transport Layer Security (DTLS) {{RFC9147}} for transport-layer security between the nodes in the ACE architecture but works equally well for Transport Layer Security (TLS) {{RFC8446}}. For many constrained implementations, Constrained Application Protocol (CoAP) over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the Client and the Resource
 Server, and the Client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This dual support for security over TCP as well as UDP is already supported by the Object Security for Constrained RESTful Environments (OSCORE) profile for ACE {{RFC9203}}.
