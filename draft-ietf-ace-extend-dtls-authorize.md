@@ -1,7 +1,7 @@
 ---
-title: Extension of the CoAP-DTLS Profile for ACE to TLS
+title: Extension of the Datagram Transport Layer Security (DTLS) Profile for Authentication and Authorization for Constrained Environments (ACE) to Transport Layer Security (TLS)
 docname: draft-ietf-ace-extend-dtls-authorize
-abbrev: CoAP-DTLS Extension
+abbrev: CoAP-DTLS Extension to TLS
 docname: draft-ietf-ace-extend-dtls-authorize-latest
 updates: 9202
 ipr: trust200902
@@ -43,6 +43,7 @@ author:
 
 normative:
 
+  RFC7228:
   RFC7252:
   RFC8323:
   RFC8446:
@@ -61,20 +62,16 @@ entity:
 
 --- abstract
 
-This document updates the CoAP-DTLS profile for ACE described in RFC 9202
-by specifying that the profile applies to TLS as well as DTLS.
+This document updates the Datagram Transport Layer Security (DTLS) Profile for Authentication and Authorization for Constrained Environments (ACE) specified in RFC 9202 by specifying that the profile applies to Transport Layer Security (TLS) as well as Datagram TLS (DTLS).
 
 --- middle
 
-# Introduction
+# Introduction 
 
-{{RFC9202}} only specifies the use of DTLS {{RFC9147}} but works equally well for TLS {{RFC8446}}. For many constrained implementations, CoAP over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the client and the RS, and the client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This dual support for security over TCP as well as UDP is already supported by the OSCORE profile {{RFC9203}}.
+The Authentication and Authorization for Constrained Environments (ACE) framework {{RFC9200}} defines an architecture for lightweight authorization between Client, Resource Server (RS), and Authorization Server (AS) where the Client and RS may be constrained {{RFC7228}}. The Datagram Transport Layer Security (DTLS) Profile for Authentication and Authorization for Constrained Environments (ACE) {{RFC9202}} only specifies the use of Datagram Transport Layer Security (DTLS) {{RFC9147}} for transport-layer security between the nodes in the ACE architecture but works equally well for Transport Layer Security (TLS) {{RFC8446}}. For many constrained implementations, Constrained Application Protocol (CoAP) over UDP {{RFC7252}} is the first choice, but when deploying ACE in networks controlled by other entities (such as the Internet), UDP might be blocked on the path between the Client and the Resource
+Server, and the Client might have to fall back to CoAP over TCP {{RFC8323}} for NAT or firewall traversal. This dual support for security over TCP as well as UDP is already supported by the Object Security for Constrained RESTful Environments (OSCORE) profile for ACE {{RFC9203}}.
 
-This document updates {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS. It only impacts the transport layer security channel between Client and Resource Server.
-The same access rights are valid in case transport layer security is provided by either DTLS or TLS. The same access token can be used by either DTLS or TLS between a given (Client, RS) pair. Therefore, the value `coap_dtls` in the `ace_profile` parameter of an
-AS-to-Client response or in the `ace_profile` claim of an access token
-indicates that either DTLS or TLS can be used for transport layer
-security.
+This document updates {{RFC9202}} by specifying that the profile applies to TLS as well as DTLS. It only impacts the transport layer security channel between Client and Resource Server. The same access rights are valid in case transport layer security is provided by either DTLS or TLS. The same access token can be used by either DTLS or TLS between a given (Client, RS) pair. Therefore, the value `coap_dtls` in the `ace_profile` parameter of an Authorization Server to Client (AS-to-Client) response or in the `ace_profile` claim of an access token indicates that either DTLS or TLS can be used for transport layer security.
 
 
 # Terminology
@@ -82,8 +79,7 @@ security.
 {::boilerplate bcp14-tagged}
 
 Readers are expected to be familiar with the terms and concepts
-described in {{RFC9200}} and
-{{RFC9202}}.
+described in {{RFC9200}} and {{RFC9202}}.
 
 # Specific Changes to RFC 9202
 
@@ -99,39 +95,38 @@ available, as described in the following section.
 # Connection Establishment
 
 Following the procedures defined in {{RFC9202}}, a
-Client can retrieve an Access Token from an Authorization Server (AS)
-in order to establish a security association with a specific Resource
+Client can retrieve an Access Token from an Authorization Server in
+order to establish a security association with a specific Resource
 Server. The `ace_profile` parameter in the Client-to-AS request and
 AS-to-client response is used to determine the ACE profile that the
-Client uses towards the Resource Server (RS).
+Client uses towards the Resource Server.
 
 The `ace_profile` parameter indicates the use of the DTLS
 profile for ACE as defined in {{RFC9202}}. Therefore, the Client typically
 first tries using DTLS to connect to the Resource Server. If this fails the
-Client MAY try to connect to the Resource Server via TLS. The client can try TLS and
-DTLS in parallel to accelerate the connection setup. It is up to the
-implementation to handle the case where the RS reponds to both connection
-requests.
+Client MAY try to connect to the Resource Server via TLS.
 
 As resource-constrained devices are not expected to support both
-transport layer security mechanisms. Clients and Resource Servers
+transport layer security mechanisms, Clients and Resource Servers
 SHOULD support DTLS and MAY support TLS. A Client that implements either
 TLS or DTLS but not both might fail in establishing a secure
-communication channel with the Resource Server altogether.
+communication channel with the Resource Server altogether. Non-constrained
+Clients and Resource Servers SHOULD support both TLS and DTLS.
 
 Note that a communication setup with an a priori unknown Resource
 Server typically employs an initial unauthorized resource request as
 illustrated in Section 2 of {{RFC9202}}. If this
 message exchange succeeds, the Client SHOULD first use the same
 underlying transport protocol also for the establishment of the security
-association to RS (i.e., DTLS for UDP, and TLS for TCP).
+association to the Resource Server (i.e., DTLS for UDP, and TLS for TCP).
 
 As a consequence, the selection of the transport protocol used for the
 initial unauthorized resource request also depends on the transport
 layer security mechanism supported by the Client.  Clients that
 support either DTLS or TLS but not both SHOULD use the transport
 protocol underlying the supported transport layer security mechanism
-also for an initial unauthorized resource request to the RS as in Section 2 of {{RFC9202}}.
+also for an initial unauthorized resource request to the Resource
+Server as in Section 2 of {{RFC9202}}.
 
 # IANA Considerations
 
