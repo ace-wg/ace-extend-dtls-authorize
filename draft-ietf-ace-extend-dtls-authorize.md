@@ -1,5 +1,5 @@
 ---
-title: Extension of the Datagram Transport Layer Security (DTLS) Profile for Authentication and Authorization for Constrained Environments (ACE) to Transport Layer Security (TLS)
+title: Extension to TLS of the DTLS Profile for Authentication and Authorization for Constrained Environments (ACE)
 docname: draft-ietf-ace-extend-dtls-authorize
 abbrev: CoAP-DTLS Extension to TLS
 docname: draft-ietf-ace-extend-dtls-authorize-latest
@@ -62,7 +62,7 @@ entity:
 
 --- abstract
 
-This document updates the Datagram Transport Layer Security (DTLS) Profile for Authentication and Authorization for Constrained Environments (ACE) specified in RFC 9202 by specifying that the profile applies to Transport Layer Security (TLS) as well as Datagram TLS (DTLS).
+This document updates the Datagram Transport Layer Security (DTLS) Profile for Authentication and Authorization for Constrained Environments (ACE) specified in RFC 9202 by specifying that the profile applies to TLS as well as DTLS.
 
 --- middle
 
