@@ -1,6 +1,5 @@
 ---
 title: Extension to TLS of the DTLS Profile for Authentication and Authorization for Constrained Environments (ACE)
-docname: draft-ietf-ace-extend-dtls-authorize
 abbrev: CoAP-DTLS Extension to TLS
 docname: draft-ietf-ace-extend-dtls-authorize-latest
 updates: 9202
