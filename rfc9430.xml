@@ -48,7 +48,7 @@
     <date month="June" year="2023"/>
     <area>sec</area>
     <workgroup>ace</workgroup>
-     
+
 <!-- [rfced] Please insert any keywords (beyond those that appear in the title) for use on https://www.rfc-editor.org/search. -->
 
 <keyword>example</keyword>
@@ -72,7 +72,7 @@ Server, and the Client might have to fall back to CoAP over TCP <xref target="RF
     The key words "<bcp14>MUST</bcp14>", "<bcp14>MUST NOT</bcp14>", "<bcp14>REQUIRED</bcp14>", "<bcp14>SHALL</bcp14>", "<bcp14>SHALL
     NOT</bcp14>", "<bcp14>SHOULD</bcp14>", "<bcp14>SHOULD NOT</bcp14>", "<bcp14>RECOMMENDED</bcp14>", "<bcp14>NOT RECOMMENDED</bcp14>",
     "<bcp14>MAY</bcp14>", and "<bcp14>OPTIONAL</bcp14>" in this document are to be interpreted as
-    described in BCP&nbsp;14 <xref target="RFC2119"/> <xref target="RFC8174"/> 
+    described in BCP&nbsp;14 <xref target="RFC2119"/> <xref target="RFC8174"/>
     when, and only when, they appear in all capitals, as shown here.
         </t>
       <t>Readers are expected to be familiar with the terms and concepts
@@ -170,13 +170,13 @@ channel between resource-constrained nodes.</dd>
 specification.</t>
     </section>
 
-<!-- [rfced] Please review the "Inclusive Language" portion of the online 
-Style Guide <https://www.rfc-editor.org/styleguide/part2/#inclusive_language> 
-and let us know if any changes are needed. 
+<!-- [rfced] Please review the "Inclusive Language" portion of the online
+Style Guide <https://www.rfc-editor.org/styleguide/part2/#inclusive_language>
+and let us know if any changes are needed.
 
 Note that our script did not flag any words in particular, but this should
 still be reviewed as a best practice.
--->    
-    
+-->
+
   </back>
 </rfc>
