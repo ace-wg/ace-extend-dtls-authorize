@@ -49,9 +49,11 @@
     <area>sec</area>
     <workgroup>ace</workgroup>
 
-<!-- [rfced] Please insert any keywords (beyond those that appear in the title) for use on https://www.rfc-editor.org/search. -->
-
-<keyword>example</keyword>
+    <keyword>Internet of Things (IoT)</keyword>
+    <keyword>Internet of Things</keyword>
+    <keyword>IOT</keyword>
+    <keyword>OAuth</keyword>
+    <keyword>Access Token</keyword>
 
     <abstract>
       <t>This document updates "Datagram Transport Layer Security (DTLS) Profile for Authentication and Authorization for Constrained Environments (ACE)" (RFC 9202) by specifying that the profile applies to TLS as well as DTLS.</t>
