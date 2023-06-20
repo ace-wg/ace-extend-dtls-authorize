@@ -172,13 +172,5 @@ channel between resource-constrained nodes.</dd>
 specification.</t>
     </section>
 
-<!-- [rfced] Please review the "Inclusive Language" portion of the online
-Style Guide <https://www.rfc-editor.org/styleguide/part2/#inclusive_language>
-and let us know if any changes are needed.
-
-Note that our script did not flag any words in particular, but this should
-still be reviewed as a best practice.
--->
-
   </back>
 </rfc>
